@@ -1,0 +1,8 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+"E:\TestProject\JsonArray\Plugins\DynamicLoadTexture2D\Intermediate\Build\Win64\UE4\Development\DynamicLoadTexture2D\Module.DynamicLoadTexture2D.cpp.obj"
+"E:\TestProject\JsonArray\Plugins\DynamicLoadTexture2D\Intermediate\Build\Win64\UE4\Development\DynamicLoadTexture2D\Module.DynamicLoadTexture2D.gen.cpp.obj"
+"E:\TestProject\JsonArray\Intermediate\Build\Win64\UE4\Development\DynamicLoadTexture2D\PCLaunch.rc.res"
+/OUT:"E:\TestProject\JsonArray\Plugins\DynamicLoadTexture2D\Binaries\Win64\UE4-DynamicLoadTexture2D.lib"
