@@ -16,12 +16,33 @@ class UTexture2D;
 
 #define JsonArray_Plugins_DynamicLoadTexture2D_Source_DynamicLoadTexture2D_Public_LoadTextureBPL_h_22_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execEnsureDiectory) \
+	DECLARE_FUNCTION(execReplacePNG) \
 	{ \
-		P_GET_PROPERTY(UStrProperty,Z_Param_path); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_sourceName); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetName); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		ULoadTextureBPL::EnsureDiectory(Z_Param_path); \
+		*(bool*)Z_Param__Result=ULoadTextureBPL::ReplacePNG(Z_Param_sourceName,Z_Param_targetName); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execReplaceJPG) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_sourceName); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetName); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=ULoadTextureBPL::ReplaceJPG(Z_Param_sourceName,Z_Param_targetName); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execEnsureDiectory) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_soucePath); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetPath); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		ULoadTextureBPL::EnsureDiectory(Z_Param_soucePath,Z_Param_targetPath); \
 		P_NATIVE_END; \
 	} \
  \
@@ -40,12 +61,33 @@ class UTexture2D;
 
 #define JsonArray_Plugins_DynamicLoadTexture2D_Source_DynamicLoadTexture2D_Public_LoadTextureBPL_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execEnsureDiectory) \
+	DECLARE_FUNCTION(execReplacePNG) \
 	{ \
-		P_GET_PROPERTY(UStrProperty,Z_Param_path); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_sourceName); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetName); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		ULoadTextureBPL::EnsureDiectory(Z_Param_path); \
+		*(bool*)Z_Param__Result=ULoadTextureBPL::ReplacePNG(Z_Param_sourceName,Z_Param_targetName); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execReplaceJPG) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_sourceName); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetName); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		*(bool*)Z_Param__Result=ULoadTextureBPL::ReplaceJPG(Z_Param_sourceName,Z_Param_targetName); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execEnsureDiectory) \
+	{ \
+		P_GET_PROPERTY(UStrProperty,Z_Param_soucePath); \
+		P_GET_PROPERTY(UStrProperty,Z_Param_targetPath); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		ULoadTextureBPL::EnsureDiectory(Z_Param_soucePath,Z_Param_targetPath); \
 		P_NATIVE_END; \
 	} \
  \

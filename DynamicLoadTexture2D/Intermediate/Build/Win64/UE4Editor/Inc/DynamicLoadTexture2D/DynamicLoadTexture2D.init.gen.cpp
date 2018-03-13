@@ -20,8 +20,8 @@ void EmptyLinkFunctionForGeneratedCodeDynamicLoadTexture2D_init() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), nullptr, FName(TEXT("/Script/DynamicLoadTexture2D")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x41DB7A42;
-			Guid.B = 0x8F523087;
+			Guid.A = 0xD8A5CE11;
+			Guid.B = 0xEE450A4C;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

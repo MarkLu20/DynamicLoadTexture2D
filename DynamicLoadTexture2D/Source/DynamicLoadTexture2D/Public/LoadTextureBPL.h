@@ -27,7 +27,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "LoadTexture")
 		static UTexture2D* LoadTexture2D(FString ImagePath, bool& IsValid, int32& OutWidth, int32& OutHeight);
 	UFUNCTION(BlueprintCallable, Category = "LoadTexture")
-		static void EnsureDiectory(FString path);
+		static void EnsureDiectory(FString soucePath,FString targetPath);
+	UFUNCTION(BlueprintCallable, Category = "ReplaceJPG")
+		static bool ReplaceJPG(FString sourceName, FString targetName);
+	UFUNCTION(BlueprintCallable, Category = "ReplacePNG")
+		static bool ReplacePNG(FString sourceName, FString targetName);
+
 	
 
 
@@ -35,4 +40,5 @@ public:
 
 };
 static IImageWrapperPtr GetImageWrapperByExtention(FString InImagePath);
-static FString cachePath;
+static FString soucepath;
+static FString targetpath;

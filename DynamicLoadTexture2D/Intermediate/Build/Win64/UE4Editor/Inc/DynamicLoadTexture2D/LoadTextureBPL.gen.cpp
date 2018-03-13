@@ -18,6 +18,8 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 	DYNAMICLOADTEXTURE2D_API UClass* Z_Construct_UClass_ULoadTextureBPL();
 	DYNAMICLOADTEXTURE2D_API UFunction* Z_Construct_UFunction_ULoadTextureBPL_LoadTexture2D();
 	ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
+	DYNAMICLOADTEXTURE2D_API UFunction* Z_Construct_UFunction_ULoadTextureBPL_ReplaceJPG();
+	DYNAMICLOADTEXTURE2D_API UFunction* Z_Construct_UFunction_ULoadTextureBPL_ReplacePNG();
 	DYNAMICLOADTEXTURE2D_API UClass* Z_Construct_UClass_ULoadTextureBPL_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	UPackage* Z_Construct_UPackage__Script_DynamicLoadTexture2D();
@@ -28,6 +30,8 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 		static const TNameNativePtrPair<ANSICHAR> AnsiFuncs[] = {
 			{ "EnsureDiectory", (Native)&ULoadTextureBPL::execEnsureDiectory },
 			{ "LoadTexture2D", (Native)&ULoadTextureBPL::execLoadTexture2D },
+			{ "ReplaceJPG", (Native)&ULoadTextureBPL::execReplaceJPG },
+			{ "ReplacePNG", (Native)&ULoadTextureBPL::execReplacePNG },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, AnsiFuncs, ARRAY_COUNT(AnsiFuncs));
 	}
@@ -35,14 +39,16 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 	{
 		struct LoadTextureBPL_eventEnsureDiectory_Parms
 		{
-			FString path;
+			FString soucePath;
+			FString targetPath;
 		};
 		UObject* Outer = Z_Construct_UClass_ULoadTextureBPL();
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
 			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("EnsureDiectory"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04022401, 65535, sizeof(LoadTextureBPL_eventEnsureDiectory_Parms));
-			UProperty* NewProp_path = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("path"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(path, LoadTextureBPL_eventEnsureDiectory_Parms), 0x0010000000000080);
+			UProperty* NewProp_targetPath = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("targetPath"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(targetPath, LoadTextureBPL_eventEnsureDiectory_Parms), 0x0010000000000080);
+			UProperty* NewProp_soucePath = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("soucePath"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(soucePath, LoadTextureBPL_eventEnsureDiectory_Parms), 0x0010000000000080);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -85,6 +91,60 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_ULoadTextureBPL_ReplaceJPG()
+	{
+		struct LoadTextureBPL_eventReplaceJPG_Parms
+		{
+			FString sourceName;
+			FString targetName;
+			bool ReturnValue;
+		};
+		UObject* Outer = Z_Construct_UClass_ULoadTextureBPL();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReplaceJPG"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04022401, 65535, sizeof(LoadTextureBPL_eventReplaceJPG_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, LoadTextureBPL_eventReplaceJPG_Parms);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, LoadTextureBPL_eventReplaceJPG_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, LoadTextureBPL_eventReplaceJPG_Parms), sizeof(bool), true);
+			UProperty* NewProp_targetName = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("targetName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(targetName, LoadTextureBPL_eventReplaceJPG_Parms), 0x0010000000000080);
+			UProperty* NewProp_sourceName = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("sourceName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(sourceName, LoadTextureBPL_eventReplaceJPG_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("ReplaceJPG"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/LoadTextureBPL.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ULoadTextureBPL_ReplacePNG()
+	{
+		struct LoadTextureBPL_eventReplacePNG_Parms
+		{
+			FString sourceName;
+			FString targetName;
+			bool ReturnValue;
+		};
+		UObject* Outer = Z_Construct_UClass_ULoadTextureBPL();
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("ReplacePNG"), RF_Public|RF_Transient|RF_MarkAsNative) UFunction(FObjectInitializer(), nullptr, (EFunctionFlags)0x04022401, 65535, sizeof(LoadTextureBPL_eventReplacePNG_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, LoadTextureBPL_eventReplacePNG_Parms);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_MarkAsNative) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, LoadTextureBPL_eventReplacePNG_Parms), 0x0010000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, LoadTextureBPL_eventReplacePNG_Parms), sizeof(bool), true);
+			UProperty* NewProp_targetName = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("targetName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(targetName, LoadTextureBPL_eventReplacePNG_Parms), 0x0010000000000080);
+			UProperty* NewProp_sourceName = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("sourceName"), RF_Public|RF_Transient|RF_MarkAsNative) UStrProperty(CPP_PROPERTY_BASE(sourceName, LoadTextureBPL_eventReplacePNG_Parms), 0x0010000000000080);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("ReplacePNG"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Public/LoadTextureBPL.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_ULoadTextureBPL_NoRegister()
 	{
 		return ULoadTextureBPL::StaticClass();
@@ -104,9 +164,13 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 
 				OuterClass->LinkChild(Z_Construct_UFunction_ULoadTextureBPL_EnsureDiectory());
 				OuterClass->LinkChild(Z_Construct_UFunction_ULoadTextureBPL_LoadTexture2D());
+				OuterClass->LinkChild(Z_Construct_UFunction_ULoadTextureBPL_ReplaceJPG());
+				OuterClass->LinkChild(Z_Construct_UFunction_ULoadTextureBPL_ReplacePNG());
 
-				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ULoadTextureBPL_EnsureDiectory(), "EnsureDiectory"); // 3758145202
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ULoadTextureBPL_EnsureDiectory(), "EnsureDiectory"); // 4071752474
 				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ULoadTextureBPL_LoadTexture2D(), "LoadTexture2D"); // 3635688384
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ULoadTextureBPL_ReplaceJPG(), "ReplaceJPG"); // 2262965311
+				OuterClass->AddFunctionToFunctionMapWithOverriddenName(Z_Construct_UFunction_ULoadTextureBPL_ReplacePNG(), "ReplacePNG"); // 1914756195
 				static TCppClassTypeInfo<TCppClassTypeTraits<ULoadTextureBPL> > StaticCppClassTypeInfo;
 				OuterClass->SetCppTypeInfo(&StaticCppClassTypeInfo);
 				OuterClass->StaticLink();
@@ -120,7 +184,7 @@ void EmptyLinkFunctionForGeneratedCodeLoadTextureBPL() {}
 		check(OuterClass->GetClass());
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ULoadTextureBPL, 1207239237);
+	IMPLEMENT_CLASS(ULoadTextureBPL, 2126702683);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ULoadTextureBPL(Z_Construct_UClass_ULoadTextureBPL, &ULoadTextureBPL::StaticClass, TEXT("/Script/DynamicLoadTexture2D"), TEXT("ULoadTextureBPL"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ULoadTextureBPL);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
