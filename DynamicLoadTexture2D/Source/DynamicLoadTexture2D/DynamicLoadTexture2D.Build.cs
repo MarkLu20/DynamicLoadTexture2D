@@ -28,6 +28,7 @@ public class DynamicLoadTexture2D : ModuleRules
 			new string[]
 			{
 				"Core",
+                //"DesktopPlatform",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -40,6 +41,8 @@ public class DynamicLoadTexture2D : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+               // "SlateFileDialogs",
+                
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
@@ -48,7 +51,8 @@ public class DynamicLoadTexture2D : ModuleRules
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
-				// ... add any modules that your module loads dynamically here ...
+				// ... add any modules that your module loads dynamically here ..
+                //"SlateFileDialogs",
 			}
 			);
 	}
